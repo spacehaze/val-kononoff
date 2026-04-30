@@ -4,6 +4,7 @@ const sections = [
   { href: "/work", label: "Work" },
   { href: "/offers", label: "Offers" },
   { href: "/music", label: "Music" },
+  { href: "/guitar", label: "Guitar" },
   { href: "/writing", label: "Writing" },
   { href: "/interests", label: "Interests" },
 ];
