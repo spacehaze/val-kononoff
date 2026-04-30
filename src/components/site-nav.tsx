@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const sections = [
   { href: "/work", label: "Work" },
+  { href: "/offers", label: "Offers" },
   { href: "/music", label: "Music" },
   { href: "/writing", label: "Writing" },
   { href: "/interests", label: "Interests" },
