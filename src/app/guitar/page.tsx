@@ -4,12 +4,19 @@ export const metadata: Metadata = {
   title: "Guitar — Val Kononoff",
 };
 
-const items = [
+type GuitarItem = {
+  name: string;
+  kind: string;
+  description: string;
+  url?: string;
+};
+
+const items: GuitarItem[] = [
   {
-    name: "Lorem ipsum dolor",
-    kind: "Lesson",
-    description:
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    name: "Easy Triads",
+    kind: "Project",
+    description: "How to learn triads on guitar.",
+    url: "https://easy-triads.vercel.app/",
   },
   {
     name: "Consectetur adipiscing",
@@ -41,7 +48,21 @@ export default function GuitarPage() {
             className="border-b border-rule pb-8 last:border-b-0"
           >
             <div className="flex items-baseline justify-between gap-4 mb-2">
-              <h2 className="text-lg font-semibold">{item.name}</h2>
+              <h2 className="text-lg font-semibold">
+                {item.url ? (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors"
+                  >
+                    {item.name}{" "}
+                    <span className="text-muted font-normal">↗</span>
+                  </a>
+                ) : (
+                  item.name
+                )}
+              </h2>
               <span className="font-mono text-xs text-muted shrink-0">
                 {item.kind}
               </span>
