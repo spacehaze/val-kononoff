@@ -1,30 +1,31 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <article className="space-y-8">
       <header className="space-y-2">
         <h1 className="text-4xl font-bold tracking-tight">Val Kononoff</h1>
         <p className="font-mono text-sm text-muted">
-          Lorem ipsum dolor sit amet · consectetur adipiscing elit
+          fall in love with your guitar playing
         </p>
       </header>
       <div className="space-y-4 leading-relaxed text-foreground/90">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+        <p className="text-xl">
+          Fall in love with your guitar playing. Learn how guitar actually
+          works.
         </p>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum.
-        </p>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-          quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo.
+          I built{" "}
+          <Link
+            href="https://easy-triads.vercel.app"
+            className="text-accent underline underline-offset-4 hover:no-underline"
+          >
+            Easy Triads
+          </Link>{" "}
+          — a free, browser-based study tool for the small chord shapes that
+          unlock the whole fretboard. Drag, drop, and play through every
+          major, minor, and diminished triad on every string set. No signup,
+          no paywall.
         </p>
       </div>
     </article>
