@@ -3,12 +3,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <article className="space-y-8">
-      <header className="space-y-2">
-        <h1 className="text-4xl font-bold tracking-tight">Val Kononoff</h1>
-        <p className="font-mono text-sm text-muted">
-          fall in love with your guitar playing
-        </p>
-      </header>
       <div className="space-y-4 leading-relaxed text-foreground/90">
         <p className="text-xl">
           Fall in love with your guitar playing. Learn how guitar actually
@@ -18,6 +12,8 @@ export default function Home() {
           I built{" "}
           <Link
             href="https://easy-triads.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-accent underline underline-offset-4 hover:no-underline"
           >
             Easy Triads
