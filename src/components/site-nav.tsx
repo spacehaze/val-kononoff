@@ -12,7 +12,10 @@ const sections = [
 export function SiteNav() {
   return (
     <header className="border-b border-rule">
-      <nav className="mx-auto w-full max-w-2xl px-6 h-14 flex items-center justify-between">
+      <nav
+        aria-label="Primary"
+        className="mx-auto w-full max-w-2xl px-6 h-14 flex items-center justify-between"
+      >
         <Link
           href="/"
           className="text-sm font-semibold tracking-tight text-foreground"

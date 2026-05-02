@@ -30,8 +30,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <SiteNav />
-        <main className="flex-1 mx-auto w-full max-w-2xl px-6 py-16">
+        <main
+          id="main-content"
+          className="flex-1 mx-auto w-full max-w-2xl px-6 py-16"
+        >
           {children}
         </main>
         <footer className="mx-auto w-full max-w-2xl px-6 py-10 text-xs font-mono text-muted border-t border-rule">

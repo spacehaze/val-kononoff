@@ -25,9 +25,10 @@ export default function Home() {
           href="https://easy-triads.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Open Easy Triads (opens in a new tab)"
           className="inline-block text-accent underline underline-offset-4 hover:no-underline"
         >
-          Open Easy Triads ↗
+          Open Easy Triads <span aria-hidden="true">↗</span>
         </Link>
       </div>
 
