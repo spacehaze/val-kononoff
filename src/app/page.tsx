@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   MonoLabel,
   SectionRule,
@@ -6,6 +7,7 @@ import {
 } from "@/components/sections";
 import { TopNav } from "@/components/top-nav";
 import { EmailRow } from "@/components/contact-email-button";
+import portrait from "../../public/portrait.jpg";
 
 const SITE_URL = "https://valkononoff.com";
 
@@ -712,24 +714,21 @@ export default function Home() {
             <div
               style={{
                 aspectRatio: "4 / 5",
-                background: `repeating-linear-gradient(135deg, var(--rule) 0 1px, transparent 1px 12px), var(--paper-deep)`,
-                border: "1px solid var(--rule-strong)",
                 position: "relative",
+                overflow: "hidden",
+                border: "1px solid var(--rule-strong)",
+                background: "var(--paper-deep)",
               }}
-              role="img"
-              aria-label="Portrait placeholder. A photo of Val Kononoff will go here."
             >
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <MonoLabel>portrait · 4:5</MonoLabel>
-              </div>
+              <Image
+                src={portrait}
+                alt="Val Kononoff — portrait"
+                fill
+                placeholder="blur"
+                sizes="(max-width: 1024px) 60vw, 480px"
+                style={{ objectFit: "cover", objectPosition: "center top" }}
+                priority
+              />
               <div
                 style={{
                   position: "absolute",
@@ -738,12 +737,17 @@ export default function Home() {
                   display: "flex",
                   flexDirection: "column",
                   gap: 4,
+                  padding: "8px 10px",
+                  background: "rgba(21,21,26,0.55)",
+                  backdropFilter: "blur(6px)",
                 }}
               >
-                <MonoLabel style={{ color: "var(--ink)" }}>
+                <MonoLabel style={{ color: "#F5F2EC" }}>
                   Val Kononoff
                 </MonoLabel>
-                <MonoLabel>Quality Engineering Consultant</MonoLabel>
+                <MonoLabel style={{ color: "rgba(245,242,236,0.7)" }}>
+                  Quality Engineering Consultant
+                </MonoLabel>
               </div>
             </div>
           </div>
