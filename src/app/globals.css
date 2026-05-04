@@ -116,53 +116,73 @@ a {
   }
 }
 
-/* Responsive breakpoints — desktop-first */
+/* ──────────────────────────────────────────────────────────────
+   Mobile responsive overrides (from handoff/mobile-responsive)
+   Inline JSX styles are overridden here via !important, scoped
+   to @media so desktop (≥1025px) is byte-identical.
+   ────────────────────────────────────────────────────────────── */
+
+/* ─── Tablet: ≤1024px ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .hero-cta-row,
-  .service-grid,
-  .work-row,
-  .faq-row {
-    grid-template-columns: 1fr !important;
-  }
-  .faq-row {
-    gap: 12px !important;
-  }
-  .work-row {
-    gap: 16px !important;
-  }
-  .about-grid {
-    grid-template-columns: 80px 1fr !important;
-  }
-  .about-grid > :last-child {
-    grid-column: 1 / -1 !important;
-    max-width: 480px;
-    margin-top: 24px;
-  }
-  .contact-grid {
-    grid-template-columns: 80px 1fr !important;
-  }
-  .contact-grid > :last-child {
-    grid-column: 2 !important;
-    margin-top: 32px;
-  }
+  .vk-section          { padding-left: 32px !important; padding-right: 32px !important; }
+  .vk-nav-inner        { padding: 16px 32px !important; gap: 20px !important; }
+  .vk-nav-links        { display: none !important; }
+
+  .vk-grid-gutter                       { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .vk-grid-gutter > .vk-gutter-spacer   { display: none !important; }
+
+  .vk-hero-row         { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .vk-services-grid    { grid-template-columns: 1fr !important; }
+  .vk-work-row         { grid-template-columns: 1fr !important; gap: 16px !important; padding: 28px 0 !important; }
+  .vk-about-grid       { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .vk-contact-grid     { grid-template-columns: 1fr !important; gap: 32px !important; align-items: start !important; }
+  .vk-contact-meta     { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+  .vk-hero-metrics     { grid-template-columns: 1fr 1fr !important; }
 }
 
-@media (max-width: 768px) {
-  section,
-  header > div,
-  footer > div {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .hero-metrics {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .contact-meta-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  /* Drop the 80px gutter on mobile */
-  [style*="grid-template-columns: 80px 1fr"],
-  [style*="grid-template-columns: 80px 1fr auto"] {
-    grid-template-columns: 1fr !important;
-  }
+/* ─── Phone: ≤640px ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .vk-section            { padding-left: 20px !important; padding-right: 20px !important; }
+  .vk-section-vpad       { padding-top: 56px !important; padding-bottom: 64px !important; }
+  .vk-section-vpad-hero  { padding-top: 40px !important; padding-bottom: 64px !important; }
+
+  .vk-nav-inner          { padding: 14px 20px !important; gap: 12px !important; }
+  .vk-nav-cta            { padding: 8px 12px !important; font-size: 12.5px !important; }
+  .vk-wordmark           { font-size: 15px !important; }
+
+  .vk-h1                 { font-size: 44px !important; line-height: 1.0 !important; max-width: none !important; }
+  .vk-h2                 { font-size: 30px !important; line-height: 1.1 !important; max-width: none !important; }
+  .vk-h2-contact         { font-size: 36px !important; line-height: 1.05 !important; max-width: none !important; }
+  .vk-h2-about           { font-size: 26px !important; line-height: 1.2 !important; max-width: none !important; }
+  .vk-card-h3            { font-size: 22px !important; }
+  .vk-work-h3            { font-size: 22px !important; max-width: none !important; }
+  .vk-work-metric        { font-size: 30px !important; }
+
+  .vk-body-lg            { font-size: 16px !important; }
+  .vk-body               { font-size: 15px !important; }
+
+  .vk-card               { padding: 28px 24px !important; min-height: 0 !important; }
+
+  .vk-hero-cta-row       { flex-direction: column !important; align-items: stretch !important; gap: 16px !important; }
+  .vk-hero-metrics       { grid-template-columns: 1fr 1fr !important; }
+  .vk-hero-metric-cell   { padding: 20px 18px !important; }
+
+  .vk-primary-btn        { padding: 16px 22px !important; font-size: 15px !important; justify-content: center !important; }
+  .vk-ghost-btn          { justify-content: center !important; padding: 14px 0 !important; }
+
+  .vk-toplabel-row       { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+  .vk-toplabel-rule      { display: none !important; }
+
+  .vk-contact-row-email,
+  .vk-contact-row-phone  { font-size: 15px !important; }
+  .vk-contact-email-cell { padding: 16px 18px !important; }
+  .vk-contact-copy-btn   { padding: 0 16px !important; min-width: 76px !important; font-size: 10.5px !important; }
+  .vk-contact-mail-launch{ padding: 0 14px !important; min-width: 48px !important; }
+  .vk-contact-phone-row  { padding: 16px 18px !important; }
+
+  .vk-footer-inner       { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+  .vk-footer-links       { gap: 16px !important; flex-wrap: wrap !important; }
 }
+
+/* Old responsive overrides removed — replaced by the vk-* classes
+   above (from handoff/mobile-responsive). */

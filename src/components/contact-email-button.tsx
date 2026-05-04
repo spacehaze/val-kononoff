@@ -45,6 +45,7 @@ export function EmailRow() {
 
   return (
     <div
+      className="vk-contact-row-email"
       style={{
         display: "flex",
         alignItems: "stretch",
@@ -56,6 +57,7 @@ export function EmailRow() {
       }}
     >
       <span
+        className="vk-contact-email-cell"
         style={{
           flex: 1,
           display: "flex",
@@ -79,6 +81,7 @@ export function EmailRow() {
         type="button"
         onClick={onCopy}
         aria-label={copied ? "Copied to clipboard" : "Copy email to clipboard"}
+        className="vk-contact-copy-btn"
         style={{
           appearance: "none",
           borderLeft: "1px solid rgba(245,242,236,0.25)",
@@ -103,6 +106,7 @@ export function EmailRow() {
       <a
         href={`mailto:${EMAIL}`}
         aria-label="Open in mail app"
+        className="vk-contact-mail-launch"
         style={{
           display: "flex",
           alignItems: "center",

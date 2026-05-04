@@ -65,6 +65,7 @@ export function PrimaryButton({
   return (
     <a
       href={href}
+      className="vk-primary-btn"
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -119,6 +120,7 @@ export function GhostButton({
   return (
     <a
       href={href}
+      className="vk-ghost-btn"
       style={{
         display: "inline-flex",
         alignItems: "center",

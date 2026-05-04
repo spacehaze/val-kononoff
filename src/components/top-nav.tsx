@@ -19,7 +19,7 @@ export function TopNav() {
       }}
     >
       <div
-        className="mx-auto"
+        className="mx-auto vk-nav-inner"
         style={{
           maxWidth: 1280,
           padding: "20px 56px",
@@ -44,7 +44,7 @@ export function TopNav() {
             aria-hidden
           />
           <span
-            className="font-[var(--font-serif)]"
+            className="font-[var(--font-serif)] vk-wordmark"
             style={{
               fontSize: 17,
               fontWeight: 500,
@@ -58,7 +58,7 @@ export function TopNav() {
 
         <nav
           aria-label="Primary"
-          className="hidden md:flex"
+          className="hidden md:flex vk-nav-links"
           style={{ gap: 36 }}
         >
           {NAV_LINKS.map((l) => (
@@ -87,7 +87,7 @@ export function TopNav() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hover:opacity-90 transition-opacity"
+            className="hover:opacity-90 transition-opacity vk-nav-cta"
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: 13.5,

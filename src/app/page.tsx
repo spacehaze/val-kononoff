@@ -257,10 +257,11 @@ export default function Home() {
       <main id="main-content">
         {/* § 00 Hero */}
         <section
-          className="mx-auto"
+          className="mx-auto vk-section vk-section-vpad-hero"
           style={{ padding: "80px 56px 120px", maxWidth: 1280 }}
         >
           <div
+            className="vk-grid-gutter"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr",
@@ -269,11 +270,12 @@ export default function Home() {
             }}
           >
             <MonoLabel>§ 00</MonoLabel>
-            <div className="flex items-center" style={{ gap: 16, flexWrap: "wrap" }}>
+            <div className="flex items-center vk-toplabel-row" style={{ gap: 16, flexWrap: "wrap" }}>
               <MonoLabel style={{ color: "var(--ink)" }}>
                 QA & Quality Engineering Consulting
               </MonoLabel>
               <span
+                className="vk-toplabel-rule"
                 style={{
                   width: 40,
                   height: 1,
@@ -286,6 +288,7 @@ export default function Home() {
           </div>
 
           <h1
+            className="vk-h1"
             style={{
               fontFamily: "var(--font-serif)",
               fontSize: "clamp(56px, 7.2vw, 104px)",
@@ -313,7 +316,7 @@ export default function Home() {
           </h1>
 
           <div
-            className="hero-cta-row"
+            className="vk-hero-row"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -323,6 +326,7 @@ export default function Home() {
             }}
           >
             <p
+              className="vk-body-lg"
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 19,
@@ -337,14 +341,14 @@ export default function Home() {
               engineering layer — strategy, automation, and AI-driven
               workflows that scale with your team.
             </p>
-            <div className="flex items-center" style={{ gap: 32, flexWrap: "wrap" }}>
+            <div className="flex items-center vk-hero-cta-row" style={{ gap: 32, flexWrap: "wrap" }}>
               <PrimaryButton href="#contact">Get in touch</PrimaryButton>
               <GhostButton href="#services">See services</GhostButton>
             </div>
           </div>
 
           <div
-            className="hero-metrics"
+            className="vk-hero-metrics"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",
@@ -357,6 +361,7 @@ export default function Home() {
             {HERO_METRICS.map(([k, v]) => (
               <div
                 key={k}
+                className="vk-hero-metric-cell"
                 style={{ background: "var(--paper)", padding: "28px 24px" }}
               >
                 <div
@@ -390,11 +395,12 @@ export default function Home() {
         {/* § 01 Services */}
         <section
           id="services"
-          className="mx-auto"
+          className="mx-auto vk-section vk-section-vpad"
           style={{ padding: "0 56px 120px", maxWidth: 1280 }}
         >
           <SectionRule label="Services" idx="01" />
           <div
+            className="vk-grid-gutter"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr",
@@ -402,8 +408,9 @@ export default function Home() {
               marginBottom: 64,
             }}
           >
-            <div />
+            <div className="vk-gutter-spacer" />
             <h2
+              className="vk-h2"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(36px, 4.4vw, 56px)",
@@ -425,7 +432,7 @@ export default function Home() {
           </div>
 
           <div
-            className="service-grid"
+            className="vk-services-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -437,6 +444,7 @@ export default function Home() {
             {SERVICES.map((s) => (
               <article
                 key={s.n}
+                className="vk-card"
                 style={{
                   background: "var(--paper)",
                   padding: "40px 40px 44px",
@@ -454,6 +462,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3
+                    className="vk-card-h3"
                     style={{
                       fontFamily: "var(--font-serif)",
                       fontSize: 30,
@@ -467,6 +476,7 @@ export default function Home() {
                     {s.title}
                   </h3>
                   <p
+                    className="vk-body"
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontSize: 16,
@@ -529,11 +539,12 @@ export default function Home() {
         {/* § 02 Selected work */}
         <section
           id="work"
-          className="mx-auto"
+          className="mx-auto vk-section vk-section-vpad"
           style={{ padding: "0 56px 120px", maxWidth: 1280 }}
         >
           <SectionRule label="Selected work" idx="02" />
           <div
+            className="vk-grid-gutter"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr",
@@ -541,8 +552,9 @@ export default function Home() {
               marginBottom: 64,
             }}
           >
-            <div />
+            <div className="vk-gutter-spacer" />
             <h2
+              className="vk-h2"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(36px, 4.4vw, 56px)",
@@ -564,7 +576,7 @@ export default function Home() {
             {WORK.map((w) => (
               <article
                 key={w.n}
-                className="work-row"
+                className="vk-work-row"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "80px 1fr 1.4fr 1fr",
@@ -576,6 +588,7 @@ export default function Home() {
               >
                 <MonoLabel>— {w.n}</MonoLabel>
                 <h3
+                  className="vk-work-h3"
                   style={{
                     fontFamily: "var(--font-serif)",
                     fontSize: 28,
@@ -590,6 +603,7 @@ export default function Home() {
                   {w.title}
                 </h3>
                 <p
+                  className="vk-body"
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontSize: 15.5,
@@ -603,6 +617,7 @@ export default function Home() {
                 </p>
                 <div>
                   <div
+                    className="vk-work-metric"
                     style={{
                       fontFamily: "var(--font-serif)",
                       fontSize: 38,
@@ -654,12 +669,12 @@ export default function Home() {
         {/* § 03 About */}
         <section
           id="about"
-          className="mx-auto"
+          className="mx-auto vk-section vk-section-vpad"
           style={{ padding: "0 56px 120px", maxWidth: 1280 }}
         >
           <SectionRule label="About" idx="03" />
           <div
-            className="about-grid"
+            className="vk-about-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1.1fr 1fr",
@@ -667,9 +682,10 @@ export default function Home() {
               alignItems: "start",
             }}
           >
-            <div />
+            <div className="vk-gutter-spacer" />
             <div>
               <h2
+                className="vk-h2-about"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "clamp(32px, 3.6vw, 44px)",
@@ -756,11 +772,12 @@ export default function Home() {
         {/* § 04 FAQ */}
         <section
           id="faq"
-          className="mx-auto"
+          className="mx-auto vk-section vk-section-vpad"
           style={{ padding: "0 56px 120px", maxWidth: 1280 }}
         >
           <SectionRule label="Common questions" idx="04" />
           <div
+            className="vk-grid-gutter"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr",
@@ -768,8 +785,9 @@ export default function Home() {
               marginBottom: 64,
             }}
           >
-            <div />
+            <div className="vk-gutter-spacer" />
             <h2
+              className="vk-h2"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(36px, 4.4vw, 56px)",
@@ -791,13 +809,14 @@ export default function Home() {
           </div>
 
           <div
+            className="vk-grid-gutter"
             style={{
               display: "grid",
               gridTemplateColumns: "80px 1fr",
               gap: 24,
             }}
           >
-            <div />
+            <div className="vk-gutter-spacer" />
             <dl style={{ margin: 0 }}>
               {FAQ_ITEMS.map((f, i) => (
                 <div
@@ -847,6 +866,7 @@ export default function Home() {
         {/* § 05 Get in touch */}
         <section
           id="contact"
+          className="vk-section vk-section-vpad"
           style={{
             background: "var(--contact-slab)",
             color: "var(--contact-paper)",
@@ -856,6 +876,7 @@ export default function Home() {
         >
           <div className="mx-auto" style={{ maxWidth: 1280 }}>
             <div
+              className="vk-grid-gutter"
               style={{
                 display: "grid",
                 gridTemplateColumns: "80px 1fr",
@@ -864,6 +885,7 @@ export default function Home() {
               }}
             >
               <span
+                className="vk-gutter-spacer"
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: 11,
@@ -888,7 +910,7 @@ export default function Home() {
             </div>
 
             <div
-              className="contact-grid"
+              className="vk-contact-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "80px 1.5fr 1fr",
@@ -896,8 +918,9 @@ export default function Home() {
                 alignItems: "end",
               }}
             >
-              <div />
+              <div className="vk-gutter-spacer" />
               <h2
+                className="vk-h2-contact"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "clamp(48px, 6vw, 88px)",
@@ -957,6 +980,7 @@ export default function Home() {
                 <a
                   href="tel:+14168778457"
                   aria-label="Call Val Kononoff at +1 416 877 8457"
+                  className="vk-contact-row-phone vk-contact-phone-row"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -987,7 +1011,7 @@ export default function Home() {
             </div>
 
             <div
-              className="contact-meta-grid"
+              className="vk-contact-meta"
               style={{
                 marginTop: 96,
                 paddingTop: 32,
@@ -1029,6 +1053,7 @@ export default function Home() {
       </main>
 
       <footer
+        className="vk-section"
         style={{
           background: "var(--paper)",
           borderTop: "1px solid var(--rule)",
@@ -1036,14 +1061,14 @@ export default function Home() {
         }}
       >
         <div
-          className="mx-auto flex justify-between items-center flex-wrap"
+          className="mx-auto flex justify-between items-center flex-wrap vk-footer-inner"
           style={{ maxWidth: 1280, gap: 24 }}
         >
           <MonoLabel>
             © {new Date().getFullYear()} Val Kononoff · Quality Engineering
             Consulting
           </MonoLabel>
-          <div className="flex" style={{ gap: 28 }}>
+          <div className="flex vk-footer-links" style={{ gap: 28 }}>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
