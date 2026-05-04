@@ -5,8 +5,7 @@
 export function ThemeScript() {
   const code = `(function(){try{
     var s=localStorage.getItem('theme');
-    var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var t=s==='dark'||s==='light'?s:(prefersDark?'dark':'light');
+    var t=s==='dark'||s==='light'?s:'light';
     document.documentElement.setAttribute('data-theme',t);
   }catch(e){}})();`;
   return <script dangerouslySetInnerHTML={{ __html: code }} />;
