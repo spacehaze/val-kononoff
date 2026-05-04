@@ -951,8 +951,8 @@ export default function Home() {
                 </a>
                 <EmailRow />
                 <a
-                  href="tel:+14165550142"
-                  aria-label="Call Val (placeholder number)"
+                  href="tel:+14168778457"
+                  aria-label="Call Val Kononoff at +1 416 877 8457"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -967,7 +967,7 @@ export default function Home() {
                     justifyContent: "space-between",
                   }}
                 >
-                  <span>+1 (416) 555 0142</span>
+                  <span>+1 (416) 877-8457</span>
                   <span
                     aria-hidden
                     style={{
