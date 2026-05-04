@@ -917,7 +917,7 @@ export default function Home() {
                 }}
               >
                 <a
-                  href="https://cal.com/val-kononoff"
+                  href="https://calendly.com/valkononoff"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Schedule a 30-minute call (opens in a new tab)"
