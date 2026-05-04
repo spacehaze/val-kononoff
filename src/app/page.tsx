@@ -5,7 +5,7 @@ import {
   GhostButton,
 } from "@/components/sections";
 import { TopNav } from "@/components/top-nav";
-import { ContactEmailButton } from "@/components/contact-email-button";
+import { EmailRow } from "@/components/contact-email-button";
 
 const SITE_URL = "https://valkononoff.com";
 
@@ -913,7 +913,7 @@ export default function Home() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 24,
+                  gap: 14,
                   paddingBottom: 8,
                 }}
               >
@@ -949,7 +949,36 @@ export default function Home() {
                     ↗
                   </span>
                 </a>
-                <ContactEmailButton />
+                <EmailRow />
+                <a
+                  href="tel:+14165550142"
+                  aria-label="Call Val (placeholder number)"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "20px 24px",
+                    border: "1px solid rgba(245,242,236,0.25)",
+                    textDecoration: "none",
+                    color: "var(--contact-paper)",
+                    fontFamily: "var(--font-sans)",
+                    fontSize: 16,
+                    fontWeight: 500,
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <span>+1 (416) 555 0142</span>
+                  <span
+                    aria-hidden
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 12,
+                      opacity: 0.6,
+                    }}
+                  >
+                    ↗
+                  </span>
+                </a>
               </div>
             </div>
 
