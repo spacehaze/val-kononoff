@@ -8,22 +8,144 @@ import { TopNav } from "@/components/top-nav";
 
 const SITE_URL = "https://valkononoff.com";
 
+const FAQ_ITEMS = [
+  {
+    q: "What kind of engagements do you take?",
+    a: "Project-based QA transformation, fractional Head of QA, test-automation framework builds, AI-in-QA integration pilots, and team training. Engagements range from a 2-week diagnostic audit to multi-quarter strategic partnerships.",
+  },
+  {
+    q: "Do you work remote, or only on-site?",
+    a: "Both. I'm based in Toronto, Canada, and work primarily with remote and distributed engineering teams worldwide. On-site visits during kick-off or training sprints are available where it makes sense.",
+  },
+  {
+    q: "How is consulting different from hiring a full-time QA lead?",
+    a: "A consultant brings cross-industry pattern recognition and an outside perspective with no internal politics. For most companies a senior QA hire takes 6–9 months to ramp up and start changing systems; an engagement starts producing roadmap and quick wins in week one. Consulting is also the right shape when you need transformation without the long-term headcount.",
+  },
+  {
+    q: "What's your approach to AI in QA workflows?",
+    a: "Pragmatic. AI tools today reliably accelerate test authoring, triage flake, and convert manual scenarios into automated specs — provided humans stay in the loop on coverage decisions. I help teams adopt LLM-assisted testing without losing the discipline of intentional coverage strategy.",
+  },
+  {
+    q: "How do you measure success on a QA engagement?",
+    a: "By delivery metrics, not test counts: time from feature merge to verified release, escaped-defect rate per quarter, automation maintenance cost, manual-authoring hours per sprint, and engineering confidence at deploy time.",
+  },
+  {
+    q: "What size of company do you work with?",
+    a: "Mostly Series A through enterprise — anywhere from 20-engineer scale-ups to 200+ engineer organizations rolling out QA practices across multiple scrum teams.",
+  },
+];
+
+const SERVICE_DEFS = [
+  {
+    n: "01",
+    title: "Strategic QA Transformation",
+    description:
+      "Align your QA strategy with business goals and reduce time to market. Includes a quality-engineering audit, roadmap with metrics, and an org-structure recommendation.",
+    serviceType: "QA Strategy Consulting",
+  },
+  {
+    n: "02",
+    title: "Test Automation",
+    description:
+      "Build reliable, maintainable automation that scales with your product. Framework selection, CI/CD integration, and a coverage strategy you can actually maintain.",
+    serviceType: "Test Automation Consulting",
+  },
+  {
+    n: "03",
+    title: "AI in QA Workflows",
+    description:
+      "Leverage AI tooling to accelerate testing and reduce manual effort: LLM-assisted authoring, AI-generated test scenarios, and automated triage of flake.",
+    serviceType: "AI-Augmented Testing Consulting",
+  },
+  {
+    n: "04",
+    title: "Team Enablement & Training",
+    description:
+      "Upskill QA and dev teams on modern practices and tools through hands-on workshops, pairing programs, and durable playbooks.",
+    serviceType: "Engineering Team Training",
+  },
+];
+
 const personJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Val Kononoff",
-  jobTitle: "QA & Quality Engineering Consultant",
-  url: SITE_URL,
-  sameAs: [],
-  description:
-    "QA and Quality Engineering consulting for engineering leaders.",
-  knowsAbout: [
-    "Quality Engineering",
-    "Test Automation",
-    "AI in QA",
-    "Engineering Leadership",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}#val-kononoff`,
+      name: "Val Kononoff",
+      jobTitle: "QA & Quality Engineering Consultant",
+      url: SITE_URL,
+      sameAs: [],
+      description:
+        "Independent QA and Quality Engineering consultant for engineering leaders.",
+      knowsAbout: [
+        "Quality Engineering",
+        "Test Automation",
+        "AI in QA",
+        "Engineering Leadership",
+        "QA Transformation",
+        "CI/CD Testing",
+        "Release Engineering",
+      ],
+      workLocation: { "@type": "Place", name: "Toronto, Canada" },
+      email: "mailto:val.kono@proton.me",
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}#service`,
+      name: "Val Kononoff — QA & Quality Engineering Consulting",
+      url: SITE_URL,
+      description:
+        "QA and Quality Engineering consulting for engineering leaders. Strategy, test automation, AI-augmented testing, and team enablement.",
+      provider: { "@id": `${SITE_URL}#val-kononoff` },
+      founder: { "@id": `${SITE_URL}#val-kononoff` },
+      areaServed: { "@type": "Place", name: "Worldwide (remote)" },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toronto",
+        addressCountry: "CA",
+      },
+      knowsAbout: [
+        "QA strategy",
+        "Test automation framework design",
+        "LLM-assisted testing",
+        "Continuous integration testing",
+        "Release pipeline optimization",
+        "QA team scaling",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Consulting services",
+        itemListElement: SERVICE_DEFS.map((s) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: s.title,
+            description: s.description,
+            serviceType: s.serviceType,
+            provider: { "@id": `${SITE_URL}#val-kononoff` },
+          },
+        })),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}#website`,
+      url: SITE_URL,
+      name: "Val Kononoff",
+      publisher: { "@id": `${SITE_URL}#val-kononoff` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}#faq`,
+      mainEntity: FAQ_ITEMS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
   ],
-  workLocation: { "@type": "Place", name: "Toronto, Canada" },
 };
 
 const SERVICES = [
@@ -626,7 +748,98 @@ export default function Home() {
           </div>
         </section>
 
-        {/* § 04 Get in touch */}
+        {/* § 04 FAQ */}
+        <section
+          id="faq"
+          className="mx-auto"
+          style={{ padding: "0 56px 120px", maxWidth: 1280 }}
+        >
+          <SectionRule label="Common questions" idx="04" />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "80px 1fr",
+              gap: 24,
+              marginBottom: 64,
+            }}
+          >
+            <div />
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(36px, 4.4vw, 56px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+                color: "var(--ink)",
+                margin: 0,
+                maxWidth: "22ch",
+                fontWeight: 400,
+                textWrap: "balance",
+              }}
+            >
+              Things engineering leaders ask before we{" "}
+              <em style={{ color: "var(--accent)", fontStyle: "italic" }}>
+                start
+              </em>
+              .
+            </h2>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "80px 1fr",
+              gap: 24,
+            }}
+          >
+            <div />
+            <dl style={{ margin: 0 }}>
+              {FAQ_ITEMS.map((f, i) => (
+                <div
+                  key={f.q}
+                  style={{
+                    borderTop: i === 0 ? "1px solid var(--rule)" : "none",
+                    borderBottom: "1px solid var(--rule)",
+                    padding: "28px 0",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1.4fr",
+                    gap: 48,
+                    alignItems: "start",
+                  }}
+                  className="faq-row"
+                >
+                  <dt
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontSize: 22,
+                      lineHeight: 1.25,
+                      letterSpacing: "-0.015em",
+                      color: "var(--ink)",
+                      fontWeight: 400,
+                      maxWidth: "22ch",
+                    }}
+                  >
+                    {f.q}
+                  </dt>
+                  <dd
+                    style={{
+                      margin: 0,
+                      fontFamily: "var(--font-sans)",
+                      fontSize: 16,
+                      lineHeight: 1.65,
+                      color: "var(--ink-soft)",
+                      maxWidth: "60ch",
+                    }}
+                  >
+                    {f.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        {/* § 05 Get in touch */}
         <section
           id="contact"
           style={{
@@ -654,7 +867,7 @@ export default function Home() {
                   color: "rgba(245,242,236,0.5)",
                 }}
               >
-                § 04
+                § 05
               </span>
               <span
                 style={{

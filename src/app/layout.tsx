@@ -27,9 +27,10 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://valkononoff.com";
 const SITE_NAME = "Val Kononoff";
-const TITLE = "Val Kononoff — QA & Quality Engineering Consulting";
+const TITLE =
+  "Val Kononoff — QA & Quality Engineering Consultant · Toronto / Remote";
 const DESCRIPTION =
-  "QA and Quality Engineering consulting for engineering leaders. Strategic QA transformation, test automation, AI in QA workflows, and team enablement.";
+  "Independent QA and Quality Engineering consultant for engineering leaders. Strategic QA transformation, test automation framework design, AI-augmented testing workflows, and team enablement. Based in Toronto, working with teams worldwide. 12+ years across 8+ scrum teams; 40% faster time to market on average.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,14 +39,25 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   keywords: [
     "QA consulting",
-    "quality engineering",
-    "test automation",
+    "QA consultant",
+    "quality engineering consultant",
+    "test automation consultant",
     "AI in QA",
+    "AI-augmented testing",
+    "LLM test generation",
     "delivery acceleration",
     "QA transformation",
+    "QA strategy",
+    "QA audit",
+    "test automation framework",
+    "CI/CD testing",
+    "release pipeline optimization",
+    "QA team scaling",
     "engineering leadership",
     "Val Kononoff",
     "Toronto QA consultant",
+    "remote QA consultant",
+    "fractional QA lead",
   ],
   authors: [{ name: "Val Kononoff" }],
   creator: "Val Kononoff",

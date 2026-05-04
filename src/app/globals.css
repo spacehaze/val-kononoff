@@ -120,8 +120,12 @@ a {
 @media (max-width: 1024px) {
   .hero-cta-row,
   .service-grid,
-  .work-row {
+  .work-row,
+  .faq-row {
     grid-template-columns: 1fr !important;
+  }
+  .faq-row {
+    gap: 12px !important;
   }
   .work-row {
     gap: 16px !important;
