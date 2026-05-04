@@ -5,6 +5,7 @@ import {
   GhostButton,
 } from "@/components/sections";
 import { TopNav } from "@/components/top-nav";
+import { ContactEmailButton } from "@/components/contact-email-button";
 
 const SITE_URL = "https://valkononoff.com";
 
@@ -948,34 +949,7 @@ export default function Home() {
                     ↗
                   </span>
                 </a>
-                <a
-                  href="mailto:val.kono@proton.me"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 14,
-                    padding: "20px 28px",
-                    border: "1px solid rgba(245,242,236,0.25)",
-                    color: "var(--contact-paper)",
-                    textDecoration: "none",
-                    fontFamily: "var(--font-sans)",
-                    fontSize: 16,
-                    fontWeight: 500,
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <span>val.kono@proton.me</span>
-                  <span
-                    aria-hidden
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 12,
-                      opacity: 0.6,
-                    }}
-                  >
-                    ↗
-                  </span>
-                </a>
+                <ContactEmailButton />
               </div>
             </div>
 
