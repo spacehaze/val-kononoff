@@ -736,7 +736,7 @@ export default function Home() {
                   </span>
                 </a>
                 <a
-                  href="mailto:hello@valkononoff.com"
+                  href="mailto:val.kono@proton.me"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -751,7 +751,7 @@ export default function Home() {
                     justifyContent: "space-between",
                   }}
                 >
-                  <span>hello@valkononoff.com</span>
+                  <span>val.kono@proton.me</span>
                   <span
                     aria-hidden
                     style={{
@@ -840,7 +840,7 @@ export default function Home() {
             >
               <MonoLabel style={{ color: "var(--ink)" }}>GitHub</MonoLabel>
             </a>
-            <a href="mailto:hello@valkononoff.com" aria-label="Email Val">
+            <a href="mailto:val.kono@proton.me" aria-label="Email Val">
               <MonoLabel style={{ color: "var(--ink)" }}>Email</MonoLabel>
             </a>
           </div>
