@@ -1,48 +1,86 @@
 @import "tailwindcss";
 
+/* Design tokens — light (default) */
 :root {
-  --background: #fafaf9;
-  --foreground: #18181b;
-  --muted: #595964;
-  --rule: #e4e4e7;
-  --accent: #1e3a5f;
+  --paper: #F5F2EC;
+  --paper-deep: #EAE6DC;
+  --ink: #15151A;
+  --ink-soft: rgba(21, 21, 26, 0.78);
+  --muted: rgba(21, 21, 26, 0.50);
+  --rule: rgba(21, 21, 26, 0.12);
+  --rule-strong: rgba(21, 21, 26, 0.30);
+  --accent: #7A1F2B;
+  --accent-soft: rgba(122, 31, 43, 0.18);
+  --contact-slab: var(--ink);
+  --contact-paper: var(--paper);
+}
+
+/* Dark variant — kicked in by the inline ThemeScript via data-theme="dark" */
+:root[data-theme="dark"] {
+  --paper: #15151A;
+  --paper-deep: #0E0E12;
+  --ink: #F5F2EC;
+  --ink-soft: rgba(245, 242, 236, 0.78);
+  --muted: rgba(245, 242, 236, 0.50);
+  --rule: rgba(245, 242, 236, 0.12);
+  --rule-strong: rgba(245, 242, 236, 0.30);
+  --accent: #B5586A;
+  --accent-soft: rgba(181, 88, 106, 0.22);
+  --contact-slab: #0A0A0E;
+  --contact-paper: #F5F2EC;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-rule: var(--rule);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0c0d;
-    --foreground: #ededed;
-    --muted: #b8b8be;
-    --rule: #27272a;
-    --accent: #93b8e0;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Visible focus ring for keyboard users */
-:where(button, a, input, select, textarea):focus-visible {
+::selection {
+  background: var(--accent-soft);
+}
+
+a {
+  color: inherit;
+}
+
+/* Focus ring — keyboard users only */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline-offset: 3px;
 }
 
-/* Skip link */
+/* Skip link — visible on focus */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -50,24 +88,77 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
+  z-index: 100;
 }
 .skip-link:focus {
   left: 12px;
   top: 12px;
   width: auto;
   height: auto;
-  z-index: 100;
-  background: var(--background);
+  background: var(--paper);
   color: var(--accent);
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 2px solid var(--accent);
-  border-radius: 6px;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* Responsive breakpoints — desktop-first */
+@media (max-width: 1024px) {
+  .hero-cta-row,
+  .service-grid,
+  .work-row {
+    grid-template-columns: 1fr !important;
+  }
+  .work-row {
+    gap: 16px !important;
+  }
+  .about-grid {
+    grid-template-columns: 80px 1fr !important;
+  }
+  .about-grid > :last-child {
+    grid-column: 1 / -1 !important;
+    max-width: 480px;
+    margin-top: 24px;
+  }
+  .contact-grid {
+    grid-template-columns: 80px 1fr !important;
+  }
+  .contact-grid > :last-child {
+    grid-column: 2 !important;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  section,
+  header > div,
+  footer > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .hero-metrics {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .contact-meta-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Drop the 80px gutter on mobile */
+  [style*="grid-template-columns: 80px 1fr"],
+  [style*="grid-template-columns: 80px 1fr auto"] {
+    grid-template-columns: 1fr !important;
   }
 }

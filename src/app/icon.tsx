@@ -13,15 +13,16 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#18181b",
-          color: "#fafaf9",
-          fontSize: 36,
-          fontWeight: 700,
-          letterSpacing: "-0.04em",
-          fontFamily: "system-ui, sans-serif",
+          background: "#F5F2EC",
         }}
       >
-        VK
+        <div
+          style={{
+            width: 28,
+            height: 28,
+            background: "#7A1F2B",
+          }}
+        />
       </div>
     ),
     { ...size }
