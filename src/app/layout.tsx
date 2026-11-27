@@ -1,21 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
+import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { ThemeScript } from "@/components/theme-script";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter, AskButton } from "@/components/site-footer";
 import "./globals.css";
 
-const sourceSerif = Source_Serif_4({
+const serif = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -29,9 +29,9 @@ const jetbrainsMono = JetBrains_Mono({
 const SITE_URL = "https://valkononoff.com";
 const SITE_NAME = "Val Kononoff";
 const TITLE =
-  "Val Kononoff — QA & Quality Engineering Consultant · Toronto / Remote";
+  "Val Kononoff — QA & Test Automation Courses, Materials and Consultations";
 const DESCRIPTION =
-  "Independent QA and Quality Engineering consultant for engineering leaders. Strategic QA transformation, test automation framework design, AI-augmented testing workflows, and team enablement. Based in Toronto, working with teams worldwide. 12+ years across 8+ scrum teams; 40% faster time to market on average.";
+  "Online courses, PDF playbooks and 1:1 consultations on QA, test automation and AI-augmented testing by Val Kononoff — 12+ years in quality engineering. Toronto, worldwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,6 +39,12 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
+    "QA course",
+    "test automation course",
+    "Playwright course",
+    "AI testing course",
+    "QA templates",
+    "QA consultation",
     "QA consulting",
     "QA consultant",
     "quality engineering consultant",
@@ -63,7 +69,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Val Kononoff" }],
   creator: "Val Kononoff",
   publisher: "Val Kononoff",
-  category: "consulting",
+  category: "education",
   alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
@@ -92,10 +98,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F5F2EC" },
-    { media: "(prefers-color-scheme: dark)", color: "#15151A" },
-  ],
+  themeColor: "#F3F4F6",
   width: "device-width",
   initialScale: 1,
 };
@@ -106,17 +109,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${serif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body className="antialiased">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
+        <AskButton />
         <Analytics />
       </body>
     </html>

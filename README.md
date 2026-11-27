@@ -1,12 +1,21 @@
 # Val Kononoff
 
-Personal site — a single hub for bio, work, music, writing, and other things worth keeping in one place.
+Storefront for courses, digital materials (PDFs / templates) and bookable consultations on QA & test automation.
+
+## Managing products
+
+All products, prices, promo badges and payment / booking links live in
+`src/content/products.ts`. Set `checkoutUrl` on a product (Stripe Payment
+Link, Gumroad, Calendly, …) to send the buy / book button there; while it is
+empty the button opens a pre-filled email order. `SITE.bookingUrl` and
+`SITE.questionUrl` control the header "Book a consultation" link and the
+floating "Ask a question" button.
 
 ## Stack
 
 - **Next.js 16** (App Router, Turbopack)
 - **React 19**, **TypeScript**, **Tailwind v4**
-- Static, content-driven — no client-side state, no database
+- Static, content-driven — no database; checkout is handled by external payment links
 
 ## Develop
 
